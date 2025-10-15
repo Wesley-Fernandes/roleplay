@@ -9,7 +9,8 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "test": "npm run build && npx playwright test",
-    "test:integration-update": "npx playwright test --update-snapshots"
+    "test:integration-update": "npx playwright test --update-snapshots",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {},
   "keywords": [
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.2",
+    "gh-pages": "^6.3.0",
     "typescript": "5.9.3",
     "vite": "6.3.6"
   }
