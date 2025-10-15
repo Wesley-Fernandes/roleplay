@@ -26,16 +26,19 @@ export class Player extends Actor {
   private animWalkUp: Animation| undefined;
   private animWalkLeft: Animation| undefined;
   private animWalkRight: Animation| undefined;
+  
 
   private currentDirection: "down" | "up" | "left" | "right" = "down";
 
   constructor() {
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
     super({
       name: "Player",
       pos: vec(150, 150),
       width: 64,
       height: 64,
-      anchor: vec(0.5, 0.5)
+      anchor: vec(0.5, 0.5),
+      scale: isMobile ? vec(2, 2):vec(1, 1)
     });
   }
 
