@@ -1,9 +1,6 @@
 import { defineConfig } from "vite";
 
-// if you use tiled maps
-// there is a collision between react w/ typescript .tsx
-// and tiled tileset files .tsx
-// this forces vite to not interpret tsx as react
+
 const tiledPlugin = () => {
     return {
         name: 'tiled-tileset-plugin',
@@ -18,10 +15,8 @@ const tiledPlugin = () => {
 }
 
 export default defineConfig({
-    base: '/roleplay/', // optionally give a base path, useful for itch.io to serve relative instead of the default absolut
-    plugins: [tiledPlugin()], // hint vite that tiled tilesets should be treated as external
-    // currently excalibur plugins are commonjs
-    // this forces vite to keep things from bundling ESM together with commonjs
+    base: '/roleplay/',
+    plugins: [tiledPlugin()],
     optimizeDeps: {
         exclude: ["excalibur"],
     },
